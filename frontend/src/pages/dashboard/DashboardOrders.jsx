@@ -21,7 +21,7 @@ export default function DashboardOrders() {
   if (loading) {
     return (
       <div className="flex justify-center items-center py-20">
-        <Loader2 className="animate-spin text-emerald-500 h-8 w-8" />
+        <Loader2 className="animate-spin text-amber-500 h-8 w-8" />
       </div>
     );
   }
@@ -60,7 +60,7 @@ export default function DashboardOrders() {
                 </div>
                 <div>
                   <span className="block text-gray-550 mb-0.5 uppercase tracking-wider text-[9px] font-bold">Total Amount</span>
-                  <span className="font-semibold text-emerald-450">₹{order.totalAmount}</span>
+                  <span className="font-semibold text-amber-450">₹{order.totalAmount}</span>
                 </div>
                 <div>
                   <span className="block text-gray-550 mb-0.5 uppercase tracking-wider text-[9px] font-bold">Order ID</span>
@@ -71,7 +71,7 @@ export default function DashboardOrders() {
               <div>
                 <span className={`px-2.5 py-1 rounded-full text-xxs font-bold uppercase tracking-wider ${
                   order.status === 'completed'
-                    ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
+                    ? 'bg-amber-500/10 text-amber-400 border border-amber-500/20'
                     : order.status === 'pending'
                     ? 'bg-amber-500/10 text-amber-400 border border-amber-500/20'
                     : 'bg-red-500/10 text-red-400 border border-red-500/20'
@@ -96,7 +96,7 @@ export default function DashboardOrders() {
                             className="absolute inset-0 w-full h-full object-cover"
                           />
                         ) : (
-                          <ShoppingBag size={14} className="text-emerald-500" />
+                          <ShoppingBag size={14} className="text-amber-500" />
                         )}
                       </div>
                       <div className="min-w-0">

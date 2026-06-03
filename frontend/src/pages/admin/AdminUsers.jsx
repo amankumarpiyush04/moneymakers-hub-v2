@@ -67,14 +67,14 @@ export default function AdminUsers() {
           placeholder="Search by email or name..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="w-full bg-gray-900 border border-gray-800 focus:border-emerald-500 rounded-xl py-3 pl-10 pr-4 text-sm text-white placeholder-gray-500 focus:outline-none transition-colors"
+          className="w-full bg-gray-900 border border-gray-800 focus:border-amber-500 rounded-xl py-3 pl-10 pr-4 text-sm text-white placeholder-gray-500 focus:outline-none transition-colors"
         />
       </div>
 
       {/* Users Table */}
       {loading ? (
         <div className="flex justify-center items-center py-20">
-          <Loader2 className="animate-spin text-emerald-555 h-8 w-8" />
+          <Loader2 className="animate-spin text-amber-555 h-8 w-8" />
         </div>
       ) : filteredUsers.length === 0 ? (
         <div className="text-center py-16 bg-gray-900/10 border border-dashed border-gray-850 rounded-2xl">
@@ -106,7 +106,7 @@ export default function AdminUsers() {
                     <td className="px-6 py-4">
                       <span className={`px-2.5 py-0.5 rounded text-xxs font-bold uppercase tracking-wider ${
                         u.role === 'admin'
-                          ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
+                          ? 'bg-amber-500/10 text-amber-400 border border-amber-500/20'
                           : 'bg-gray-805 text-gray-400 border border-gray-800'
                       }`}>
                         {u.role}
@@ -121,7 +121,7 @@ export default function AdminUsers() {
                         className={`text-xs font-semibold px-3 py-1.5 rounded-lg border transition-all ${
                           u.role === 'admin'
                             ? 'border-red-500/20 hover:border-red-550/40 text-red-400 bg-red-500/5 hover:bg-red-500/10'
-                            : 'border-emerald-500/20 hover:border-emerald-550/40 text-emerald-450 bg-emerald-500/5 hover:bg-emerald-500/10'
+                            : 'border-amber-500/20 hover:border-amber-550/40 text-amber-450 bg-amber-500/5 hover:bg-amber-500/10'
                         }`}
                       >
                         {u.role === 'admin' ? 'Demote to User' : 'Promote to Admin'}

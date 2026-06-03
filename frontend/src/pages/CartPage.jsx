@@ -9,7 +9,7 @@ export default function CartPage() {
   if (count() === 0) {
     return (
       <div className="bg-gray-950 text-white min-h-screen py-20 flex flex-col items-center justify-center px-4">
-        <div className="p-6 bg-gray-900 border border-gray-850 rounded-full text-emerald-450 mb-6 animate-bounce">
+        <div className="p-6 bg-gray-900 border border-gray-850 rounded-full text-amber-450 mb-6 animate-bounce">
           <ShoppingBag size={40} />
         </div>
         <h2 className="text-2xl font-bold font-sora mb-3">Your shopping cart is empty</h2>
@@ -18,7 +18,7 @@ export default function CartPage() {
         </p>
         <Link
           to="/browse"
-          className="px-6 py-3 bg-emerald-600 hover:bg-emerald-555 text-white font-bold rounded-xl transition-colors shadow-lg shadow-emerald-950/40"
+          className="px-6 py-3 bg-amber-600 hover:bg-amber-555 text-white font-bold rounded-xl transition-colors shadow-lg shadow-amber-950/40"
         >
           Browse Ebooks
         </Link>
@@ -30,7 +30,7 @@ export default function CartPage() {
     <div className="bg-gray-950 text-white min-h-screen py-12">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl font-bold font-sora mb-10 text-center md:text-left flex items-center gap-3">
-          <ShoppingBag className="text-emerald-500" /> Your Shopping Cart ({count()})
+          <ShoppingBag className="text-amber-500" /> Your Shopping Cart ({count()})
         </h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -42,7 +42,7 @@ export default function CartPage() {
                 className="bg-gray-900/40 border border-gray-850 p-4 sm:p-5 rounded-2xl flex items-center gap-4 sm:gap-6 hover:border-gray-750 transition-colors"
               >
                 {/* Book Thumbnail */}
-                <div className="w-16 sm:w-20 aspect-[4/5] bg-gradient-to-br from-emerald-950/30 to-gray-955 border border-gray-800 rounded-lg overflow-hidden shrink-0 flex items-center justify-center p-2 relative">
+                <div className="w-16 sm:w-20 aspect-[4/5] bg-gradient-to-br from-amber-950/30 to-gray-955 border border-gray-800 rounded-lg overflow-hidden shrink-0 flex items-center justify-center p-2 relative">
                   {item.coverImage?.url ? (
                     <img
                       src={item.coverImage.url}
@@ -51,7 +51,7 @@ export default function CartPage() {
                     />
                   ) : (
                     <div className="flex flex-col justify-between h-full w-full">
-                      <BookOpen size={16} className="text-emerald-500" />
+                      <BookOpen size={16} className="text-amber-500" />
                       <span className="text-[6px] font-bold text-gray-500 line-clamp-1">{item.title}</span>
                     </div>
                   )}
@@ -59,12 +59,12 @@ export default function CartPage() {
 
                 {/* Details */}
                 <div className="flex-1 min-w-0">
-                  <span className="text-[10px] font-bold text-emerald-450 uppercase tracking-widest block mb-1">
+                  <span className="text-[10px] font-bold text-amber-450 uppercase tracking-widest block mb-1">
                     {item.category}
                   </span>
                   <Link
                     to={`/ebook/${item.slug}`}
-                    className="text-base font-bold text-white hover:text-emerald-400 transition-colors line-clamp-1 mb-1 font-sora block"
+                    className="text-base font-bold text-white hover:text-amber-400 transition-colors line-clamp-1 mb-1 font-sora block"
                   >
                     {item.title}
                   </Link>
@@ -102,11 +102,11 @@ export default function CartPage() {
               </div>
               <div className="flex justify-between">
                 <span>Internet Handling Fee</span>
-                <span className="font-semibold text-emerald-450 uppercase text-xs">Free</span>
+                <span className="font-semibold text-amber-450 uppercase text-xs">Free</span>
               </div>
               <div className="flex justify-between">
                 <span>Taxes & GST</span>
-                <span className="font-semibold text-emerald-450 uppercase text-xs">Included</span>
+                <span className="font-semibold text-amber-450 uppercase text-xs">Included</span>
               </div>
             </div>
 
@@ -117,13 +117,13 @@ export default function CartPage() {
 
             <Link
               to="/checkout"
-              className="w-full bg-emerald-650 hover:bg-emerald-600 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-emerald-950/40 flex items-center justify-center gap-2"
+              className="w-full bg-amber-650 hover:bg-amber-600 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-amber-950/40 flex items-center justify-center gap-2"
             >
               Proceed to Checkout <ArrowRight size={18} />
             </Link>
 
             <div className="flex items-center justify-center gap-1.5 text-xxs text-gray-500 mt-6 uppercase tracking-wider font-semibold">
-              <Lock size={12} className="text-emerald-500" /> 256-Bit SSL Secure Checkout
+              <Lock size={12} className="text-amber-500" /> 256-Bit SSL Secure Checkout
             </div>
           </div>
         </div>

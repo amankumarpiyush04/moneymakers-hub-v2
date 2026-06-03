@@ -154,7 +154,7 @@ export default function AdminProducts() {
         </div>
         <button
           onClick={openAddModal}
-          className="bg-emerald-600 hover:bg-emerald-555 text-white font-semibold text-sm px-4 py-2.5 rounded-lg flex items-center justify-center gap-1.5 transition-colors self-start sm:self-auto"
+          className="bg-amber-600 hover:bg-amber-555 text-white font-semibold text-sm px-4 py-2.5 rounded-lg flex items-center justify-center gap-1.5 transition-colors self-start sm:self-auto"
         >
           <Plus size={16} /> Add Product
         </button>
@@ -163,7 +163,7 @@ export default function AdminProducts() {
       {/* Products Table */}
       {loading ? (
         <div className="flex justify-center items-center py-20">
-          <Loader2 className="animate-spin text-emerald-550 h-8 w-8" />
+          <Loader2 className="animate-spin text-amber-550 h-8 w-8" />
         </div>
       ) : products.length === 0 ? (
         <div className="text-center py-16 bg-gray-900/10 border border-dashed border-gray-850 rounded-2xl">
@@ -196,7 +196,7 @@ export default function AdminProducts() {
                           {product.coverImage?.url ? (
                             <img src={product.coverImage.url} alt="" className="absolute inset-0 w-full h-full object-cover" />
                           ) : (
-                            <BookOpen size={10} className="text-emerald-500" />
+                            <BookOpen size={10} className="text-amber-500" />
                           )}
                         </div>
                         <div className="min-w-0">
@@ -208,7 +208,7 @@ export default function AdminProducts() {
                       </div>
                     </td>
                     <td className="px-6 py-4 text-gray-300 capitalize">{product.category}</td>
-                    <td className="px-6 py-4 font-semibold text-emerald-450">₹{product.price}</td>
+                    <td className="px-6 py-4 font-semibold text-amber-450">₹{product.price}</td>
                     <td className="px-6 py-4 text-gray-300">
                       <div>{product.totalSales} sales</div>
                       <div className="text-[10px] text-gray-500">₹{product.totalRevenue} rev</div>
@@ -216,7 +216,7 @@ export default function AdminProducts() {
                     <td className="px-6 py-4">
                       <span className={`px-2 py-0.5 rounded text-xxs font-bold uppercase tracking-wider ${
                         product.isPublished
-                          ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
+                          ? 'bg-amber-500/10 text-amber-400 border border-amber-500/20'
                           : 'bg-gray-805 text-gray-500 border border-gray-800'
                       }`}>
                         {product.isPublished ? 'Published' : 'Draft'}
@@ -270,7 +270,7 @@ export default function AdminProducts() {
                   <input
                     {...register('title', { required: true })}
                     type="text" placeholder="e.g. The Wealth Blueprint"
-                    className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-emerald-500 transition-colors"
+                    className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-amber-500 transition-colors"
                   />
                 </div>
 
@@ -279,7 +279,7 @@ export default function AdminProducts() {
                   <input
                     {...register('author', { required: true })}
                     type="text" placeholder="e.g. Rajesh Sharma"
-                    className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-emerald-500 transition-colors"
+                    className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-amber-500 transition-colors"
                   />
                 </div>
               </div>
@@ -291,7 +291,7 @@ export default function AdminProducts() {
                   <input
                     {...register('price', { required: true })}
                     type="number" placeholder="499"
-                    className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-emerald-500 transition-colors"
+                    className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-amber-500 transition-colors"
                   />
                 </div>
 
@@ -300,7 +300,7 @@ export default function AdminProducts() {
                   <input
                     {...register('originalPrice')}
                     type="number" placeholder="999"
-                    className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-emerald-500 transition-colors"
+                    className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-amber-500 transition-colors"
                   />
                 </div>
 
@@ -308,7 +308,7 @@ export default function AdminProducts() {
                   <label className="block text-xs text-gray-400 uppercase tracking-wider font-bold mb-1.5">Category</label>
                   <select
                     {...register('category', { required: true })}
-                    className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-emerald-500 transition-colors"
+                    className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-amber-500 transition-colors"
                   >
                     <option value="finance">Finance</option>
                     <option value="business">Business</option>
@@ -329,7 +329,7 @@ export default function AdminProducts() {
                   <input
                     {...register('pages')}
                     type="number" placeholder="250"
-                    className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-emerald-500 transition-colors"
+                    className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-amber-500 transition-colors"
                   />
                 </div>
 
@@ -338,7 +338,7 @@ export default function AdminProducts() {
                   <input
                     {...register('language')}
                     type="text" placeholder="English"
-                    className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-emerald-500 transition-colors"
+                    className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-amber-500 transition-colors"
                   />
                 </div>
               </div>
@@ -349,7 +349,7 @@ export default function AdminProducts() {
                 <input
                   {...register('shortDescription')}
                   type="text" placeholder="Brief tagline shown on grids..."
-                  className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-emerald-500 transition-colors"
+                  className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-amber-500 transition-colors"
                 />
               </div>
 
@@ -358,7 +358,7 @@ export default function AdminProducts() {
                 <textarea
                   {...register('description', { required: true })}
                   rows="4" placeholder="Detailed chapter list, specifications, and outcomes..."
-                  className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-emerald-500 transition-colors resize-none"
+                  className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-amber-500 transition-colors resize-none"
                 />
               </div>
 
@@ -370,7 +370,7 @@ export default function AdminProducts() {
                 <textarea
                   {...register('learningPointsText')}
                   rows="3" placeholder="Point 1&#10;Point 2&#10;Point 3"
-                  className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-emerald-500 transition-colors resize-none font-mono text-xs"
+                  className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-amber-500 transition-colors resize-none font-mono text-xs"
                 />
               </div>
 
@@ -417,7 +417,7 @@ export default function AdminProducts() {
                   <input
                     {...register('isFeatured')}
                     type="checkbox"
-                    className="h-4 w-4 rounded border-gray-700 text-emerald-500 focus:ring-emerald-500 bg-gray-800"
+                    className="h-4 w-4 rounded border-gray-700 text-amber-500 focus:ring-amber-500 bg-gray-800"
                   />
                   Featured Product
                 </label>
@@ -426,7 +426,7 @@ export default function AdminProducts() {
                   <input
                     {...register('isPublished')}
                     type="checkbox"
-                    className="h-4 w-4 rounded border-gray-700 text-emerald-500 focus:ring-emerald-500 bg-gray-800"
+                    className="h-4 w-4 rounded border-gray-700 text-amber-500 focus:ring-amber-500 bg-gray-800"
                   />
                   Publish Immediately
                 </label>
@@ -443,7 +443,7 @@ export default function AdminProducts() {
                 <button
                   type="submit"
                   disabled={uploadingFiles}
-                  className="bg-emerald-600 hover:bg-emerald-555 disabled:opacity-60 text-white font-bold px-5 py-2.5 rounded-lg transition-colors flex items-center gap-2 shadow-lg shadow-emerald-950"
+                  className="bg-amber-600 hover:bg-amber-555 disabled:opacity-60 text-white font-bold px-5 py-2.5 rounded-lg transition-colors flex items-center gap-2 shadow-lg shadow-amber-950"
                 >
                   {uploadingFiles ? (
                     <>

@@ -59,7 +59,7 @@ export default function DashboardLibrary() {
   if (loading) {
     return (
       <div className="flex justify-center items-center py-20">
-        <Loader2 className="animate-spin text-emerald-500 h-8 w-8" />
+        <Loader2 className="animate-spin text-amber-500 h-8 w-8" />
       </div>
     );
   }
@@ -74,7 +74,7 @@ export default function DashboardLibrary() {
         </p>
         <Link
           to="/browse"
-          className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-555 text-white font-bold rounded-lg text-sm transition-colors"
+          className="px-6 py-2.5 bg-amber-600 hover:bg-amber-555 text-white font-bold rounded-lg text-sm transition-colors"
         >
           Browse Ebooks
         </Link>
@@ -108,7 +108,7 @@ export default function DashboardLibrary() {
               className="bg-gray-900/40 border border-gray-850 p-6 rounded-2xl flex flex-col sm:flex-row gap-6 hover:border-gray-750 transition-colors"
             >
               {/* Ebook thumbnail */}
-              <div className="w-24 aspect-[4/5] bg-gradient-to-br from-emerald-950/20 to-gray-950 border border-gray-800 rounded-xl overflow-hidden shrink-0 flex items-center justify-center p-3 relative mx-auto sm:mx-0">
+              <div className="w-24 aspect-[4/5] bg-gradient-to-br from-amber-950/20 to-gray-950 border border-gray-800 rounded-xl overflow-hidden shrink-0 flex items-center justify-center p-3 relative mx-auto sm:mx-0">
                 {product.coverImage?.url ? (
                   <img
                     src={product.coverImage.url}
@@ -117,7 +117,7 @@ export default function DashboardLibrary() {
                   />
                 ) : (
                   <div className="flex flex-col justify-between h-full w-full">
-                    <BookOpen size={20} className="text-emerald-505" />
+                    <BookOpen size={20} className="text-amber-505" />
                     <span className="text-[7px] font-bold text-gray-405 line-clamp-2 leading-tight">{product.title}</span>
                   </div>
                 )}
@@ -126,12 +126,12 @@ export default function DashboardLibrary() {
               {/* Specs & downloads */}
               <div className="flex-1 flex flex-col justify-between">
                 <div>
-                  <span className="text-[10px] font-bold text-emerald-450 uppercase tracking-widest block mb-1">
+                  <span className="text-[10px] font-bold text-amber-450 uppercase tracking-widest block mb-1">
                     {product.category}
                   </span>
                   <Link
                     to={`/ebook/${product.slug}`}
-                    className="text-base font-bold text-white hover:text-emerald-400 transition-colors line-clamp-1 mb-1 font-sora block"
+                    className="text-base font-bold text-white hover:text-amber-400 transition-colors line-clamp-1 mb-1 font-sora block"
                   >
                     {product.title}
                   </Link>
@@ -157,7 +157,7 @@ export default function DashboardLibrary() {
                   className={`w-full mt-6 py-2.5 rounded-xl font-semibold text-sm transition-all flex items-center justify-center gap-2 ${
                     downloadsRemaining <= 0
                       ? 'bg-gray-800 border border-gray-700 text-gray-550 cursor-not-allowed'
-                      : 'bg-emerald-600 hover:bg-emerald-555 text-white'
+                      : 'bg-amber-600 hover:bg-amber-555 text-white'
                   }`}
                 >
                   {downloadingId === product._id ? (

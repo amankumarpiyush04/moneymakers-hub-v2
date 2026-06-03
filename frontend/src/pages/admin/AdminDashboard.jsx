@@ -27,7 +27,7 @@ export default function AdminDashboard() {
   if (loading) {
     return (
       <div className="flex justify-center items-center py-20 text-white min-h-screen bg-gray-950">
-        <Loader2 className="animate-spin text-emerald-500 h-8 w-8" />
+        <Loader2 className="animate-spin text-amber-500 h-8 w-8" />
       </div>
     );
   }
@@ -48,7 +48,7 @@ export default function AdminDashboard() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {/* Revenue */}
         <div className="bg-gray-900 border border-gray-850 p-6 rounded-2xl flex items-center gap-4">
-          <div className="p-3.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-xl">
+          <div className="p-3.5 bg-amber-500/10 border border-amber-500/20 text-amber-400 rounded-xl">
             <DollarSign size={22} />
           </div>
           <div>
@@ -59,7 +59,7 @@ export default function AdminDashboard() {
 
         {/* Sales */}
         <div className="bg-gray-900 border border-gray-850 p-6 rounded-2xl flex items-center gap-4">
-          <div className="p-3.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-xl">
+          <div className="p-3.5 bg-amber-500/10 border border-amber-500/20 text-amber-400 rounded-xl">
             <ShoppingBag size={22} />
           </div>
           <div>
@@ -70,7 +70,7 @@ export default function AdminDashboard() {
 
         {/* Products */}
         <div className="bg-gray-900 border border-gray-850 p-6 rounded-2xl flex items-center gap-4">
-          <div className="p-3.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-xl">
+          <div className="p-3.5 bg-amber-500/10 border border-amber-500/20 text-amber-400 rounded-xl">
             <BookOpen size={22} />
           </div>
           <div>
@@ -81,7 +81,7 @@ export default function AdminDashboard() {
 
         {/* Users */}
         <div className="bg-gray-900 border border-gray-850 p-6 rounded-2xl flex items-center gap-4">
-          <div className="p-3.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-xl">
+          <div className="p-3.5 bg-amber-500/10 border border-amber-500/20 text-amber-400 rounded-xl">
             <Users size={22} />
           </div>
           <div>
@@ -96,7 +96,7 @@ export default function AdminDashboard() {
         {/* Monthly Revenue Bar Chart */}
         <div className="lg:col-span-8 bg-gray-900 border border-gray-850 p-6 rounded-2xl">
           <h3 className="text-base font-bold font-sora text-white mb-8 flex items-center gap-2">
-            <TrendingUp size={16} className="text-emerald-500" /> Revenue (Last 6 Months)
+            <TrendingUp size={16} className="text-amber-500" /> Revenue (Last 6 Months)
           </h3>
 
           {monthlyRevenue.length === 0 ? (
@@ -107,7 +107,7 @@ export default function AdminDashboard() {
                 const pct = (m.revenue / maxRevenue) * 100;
                 return (
                   <div key={idx} className="flex flex-col items-center flex-1 group">
-                    <div className="w-10 sm:w-12 bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-600/30 hover:border-emerald-500/40 rounded-t transition-all relative flex flex-col justify-end" style={{ height: `${Math.max(pct, 5)}%` }}>
+                    <div className="w-10 sm:w-12 bg-amber-500/10 border border-amber-500/20 hover:bg-amber-600/30 hover:border-amber-500/40 rounded-t transition-all relative flex flex-col justify-end" style={{ height: `${Math.max(pct, 5)}%` }}>
                       <span className="opacity-0 group-hover:opacity-100 transition-opacity absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-950 border border-gray-800 text-xxs font-semibold px-1.5 py-1 rounded text-white whitespace-nowrap shadow-xl">
                         ₹{m.revenue}
                       </span>
@@ -136,7 +136,7 @@ export default function AdminDashboard() {
                     <span className="font-bold text-sm text-white truncate block">{prod.title}</span>
                     <span className="text-[10px] text-gray-500 block">{prod.totalSales} copies sold</span>
                   </div>
-                  <span className="font-bold text-sm text-emerald-450 shrink-0">₹{prod.totalRevenue}</span>
+                  <span className="font-bold text-sm text-amber-450 shrink-0">₹{prod.totalRevenue}</span>
                 </div>
               ))}
             </div>

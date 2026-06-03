@@ -24,26 +24,38 @@ const seed = async () => {
     }
   }
 
-  // ── Create Supabase auth users ─────────────────────────────
-  // Admin
-  const { data: adminAuth } = await supabaseAdmin.auth.admin.createUser({
-    email: 'admin@moneymakershub.com',
-    password: 'Admin@123456',
-    email_confirm: true,
-    user_metadata: { name: 'Admin User' },
-  });
+  // Helper function to create or fetch a user if they already exist
+  const getOrCreateUser = async (email, password, name) => {
+    const { data, error } = await supabaseAdmin.auth.admin.createUser({
+      email,
+      password,
+      email_confirm: true,
+      user_metadata: { name },
+    });
 
-  // Test user
-  const { data: userAuth } = await supabaseAdmin.auth.admin.createUser({
-    email: 'user@test.com',
-    password: 'Test@123456',
-    email_confirm: true,
-    user_metadata: { name: 'Test User' },
-  });
+    if (!error && data && data.user) {
+      return data.user;
+    }
+
+    if (error && (error.message.includes('already exists') || error.message.includes('registered') || error.message.includes('email_exists'))) {
+      const { data: listData, error: listError } = await supabaseAdmin.auth.admin.listUsers({
+        perPage: 1000
+      });
+      if (listError) throw listError;
+      const existing = listData.users.find(u => u.email === email);
+      if (existing) return existing;
+    }
+    throw error || new Error(`Failed to create or retrieve user ${email}`);
+  };
+
+  // ── Create Supabase auth users ─────────────────────────────
+  console.log('Creating auth users...');
+  const adminUser = await getOrCreateUser('admin@moneymakershub.com', 'Admin@123456', 'Admin User');
+  const testUser = await getOrCreateUser('user@test.com', 'Test@123456', 'Test User');
 
   // ── Create MongoDB profiles ────────────────────────────────
   await User.create({
-    supabaseId: adminAuth.user.id,
+    supabaseId: adminUser.id,
     email: 'admin@moneymakershub.com',
     name: 'Admin User',
     role: 'admin',
@@ -51,7 +63,7 @@ const seed = async () => {
   console.log('✅ Admin: admin@moneymakershub.com / Admin@123456');
 
   await User.create({
-    supabaseId: userAuth.user.id,
+    supabaseId: testUser.id,
     email: 'user@test.com',
     name: 'Test User',
     role: 'user',

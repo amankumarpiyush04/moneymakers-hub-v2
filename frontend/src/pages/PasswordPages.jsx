@@ -24,7 +24,7 @@ export function ForgotPasswordPage() {
     <div className="min-h-screen bg-gray-950 flex items-center justify-center px-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <Link to="/" className="inline-flex items-center gap-2 text-emerald-400 font-bold text-2xl">
+          <Link to="/" className="inline-flex items-center gap-2 text-amber-400 font-bold text-2xl">
             <BookOpen size={28} /> MoneyMakers Hub
           </Link>
         </div>
@@ -34,7 +34,7 @@ export function ForgotPasswordPage() {
               <div className="text-5xl mb-4">📬</div>
               <h2 className="text-white text-xl font-semibold mb-2">Check your email</h2>
               <p className="text-gray-400 text-sm mb-4">We sent a password reset link to your email address.</p>
-              <Link to="/login" className="text-emerald-400 hover:text-emerald-300 text-sm">Back to login</Link>
+              <Link to="/login" className="text-amber-400 hover:text-amber-300 text-sm">Back to login</Link>
             </div>
           ) : (
             <>
@@ -45,17 +45,17 @@ export function ForgotPasswordPage() {
                   <input
                     {...register('email', { required: 'Email is required' })}
                     type="email" placeholder="you@example.com"
-                    className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500"
+                    className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500"
                   />
                   {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email.message}</p>}
                 </div>
                 <button type="submit" disabled={loading}
-                  className="w-full bg-emerald-600 hover:bg-emerald-500 disabled:opacity-60 text-white font-bold py-3 rounded-lg transition-colors">
+                  className="w-full bg-amber-600 hover:bg-amber-500 disabled:opacity-60 text-white font-bold py-3 rounded-lg transition-colors">
                   {loading ? 'Sending...' : 'Send Reset Link'}
                 </button>
               </form>
               <p className="text-center text-gray-400 text-sm mt-4">
-                <Link to="/login" className="text-emerald-400 hover:text-emerald-300">Back to login</Link>
+                <Link to="/login" className="text-amber-400 hover:text-amber-300">Back to login</Link>
               </p>
             </>
           )}
@@ -88,7 +88,7 @@ export function ResetPasswordPage() {
             <div className="text-center">
               <div className="text-5xl mb-4">✅</div>
               <h2 className="text-white text-xl font-semibold mb-2">Password updated!</h2>
-              <Link to="/login" className="text-emerald-400 hover:text-emerald-300 text-sm">Sign in with new password</Link>
+              <Link to="/login" className="text-amber-400 hover:text-amber-300 text-sm">Sign in with new password</Link>
             </div>
           ) : (
             <>
@@ -99,12 +99,12 @@ export function ResetPasswordPage() {
                   <input
                     {...register('password', { required: 'Required', minLength: { value: 8, message: 'Min 8 characters' } })}
                     type="password" placeholder="Min 8 characters"
-                    className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500"
+                    className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500"
                   />
                   {errors.password && <p className="text-red-400 text-xs mt-1">{errors.password.message}</p>}
                 </div>
                 <button type="submit" disabled={loading}
-                  className="w-full bg-emerald-600 hover:bg-emerald-500 disabled:opacity-60 text-white font-bold py-3 rounded-lg transition-colors">
+                  className="w-full bg-amber-600 hover:bg-amber-500 disabled:opacity-60 text-white font-bold py-3 rounded-lg transition-colors">
                   {loading ? 'Updating...' : 'Update Password'}
                 </button>
               </form>

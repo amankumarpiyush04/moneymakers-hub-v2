@@ -54,7 +54,7 @@ export default function AdminOrders() {
             placeholder="Search by customer email, name, or order ID..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full bg-gray-900 border border-gray-800 focus:border-emerald-500 rounded-xl py-3 pl-10 pr-4 text-sm text-white placeholder-gray-500 focus:outline-none transition-colors"
+            className="w-full bg-gray-900 border border-gray-800 focus:border-amber-500 rounded-xl py-3 pl-10 pr-4 text-sm text-white placeholder-gray-500 focus:outline-none transition-colors"
           />
         </div>
 
@@ -63,7 +63,7 @@ export default function AdminOrders() {
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="w-full md:w-auto bg-gray-900 border border-gray-800 focus:border-emerald-500 rounded-xl py-2.5 px-4 text-xs text-white focus:outline-none transition-colors"
+            className="w-full md:w-auto bg-gray-900 border border-gray-800 focus:border-amber-500 rounded-xl py-2.5 px-4 text-xs text-white focus:outline-none transition-colors"
           >
             <option value="all">All Statuses</option>
             <option value="completed">Completed</option>
@@ -76,7 +76,7 @@ export default function AdminOrders() {
       {/* Orders Table */}
       {loading ? (
         <div className="flex justify-center items-center py-20">
-          <Loader2 className="animate-spin text-emerald-550 h-8 w-8" />
+          <Loader2 className="animate-spin text-amber-550 h-8 w-8" />
         </div>
       ) : filteredOrders.length === 0 ? (
         <div className="text-center py-16 bg-gray-900/10 border border-dashed border-gray-850 rounded-2xl">
@@ -124,14 +124,14 @@ export default function AdminOrders() {
                         {order.items.length} {order.items.length === 1 ? 'item' : 'items'}
                       </div>
                     </td>
-                    <td className="px-6 py-4 font-bold text-emerald-450">₹{order.totalAmount}</td>
+                    <td className="px-6 py-4 font-bold text-amber-450">₹{order.totalAmount}</td>
                     <td className="px-6 py-4 text-gray-300">
                       {new Date(order.createdAt).toLocaleDateString()}
                     </td>
                     <td className="px-6 py-4">
                       <span className={`px-2.5 py-0.5 rounded text-xxs font-bold uppercase tracking-wider ${
                         order.status === 'completed'
-                          ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
+                          ? 'bg-amber-500/10 text-amber-400 border border-amber-500/20'
                           : order.status === 'pending'
                           ? 'bg-amber-500/10 text-amber-400 border border-amber-500/20'
                           : 'bg-red-500/10 text-red-400 border border-red-500/20'

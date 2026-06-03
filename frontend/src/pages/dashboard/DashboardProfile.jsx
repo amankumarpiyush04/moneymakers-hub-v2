@@ -64,7 +64,7 @@ export default function DashboardProfile() {
       {/* Account Info Form */}
       <div className="bg-gray-900 border border-gray-850 p-6 sm:p-8 rounded-2xl space-y-6">
         <h3 className="text-base font-bold font-sora text-white flex items-center gap-2">
-          <User className="text-emerald-500" size={18} /> Account Information
+          <User className="text-amber-500" size={18} /> Account Information
         </h3>
 
         <form onSubmit={handleProfileSubmit(onProfileUpdate)} className="space-y-4">
@@ -89,7 +89,7 @@ export default function DashboardProfile() {
                 {...profileReg('name', { required: true })}
                 type="text"
                 placeholder="Your Name"
-                className="w-full bg-gray-800 border border-gray-700 rounded-lg px-10 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 transition-colors"
+                className="w-full bg-gray-800 border border-gray-700 rounded-lg px-10 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 transition-colors"
               />
             </div>
           </div>
@@ -98,7 +98,7 @@ export default function DashboardProfile() {
             <button
               type="submit"
               disabled={updatingProfile}
-              className="bg-emerald-600 hover:bg-emerald-555 disabled:opacity-60 text-white font-semibold text-sm px-6 py-2.5 rounded-lg transition-colors flex items-center gap-2"
+              className="bg-amber-600 hover:bg-amber-555 disabled:opacity-60 text-white font-semibold text-sm px-6 py-2.5 rounded-lg transition-colors flex items-center gap-2"
             >
               {updatingProfile ? <Loader2 className="animate-spin" size={16} /> : 'Save Profile'}
             </button>
@@ -109,7 +109,7 @@ export default function DashboardProfile() {
       {/* Change Password Form */}
       <div className="bg-gray-900 border border-gray-850 p-6 sm:p-8 rounded-2xl space-y-6">
         <h3 className="text-base font-bold font-sora text-white flex items-center gap-2">
-          <Lock className="text-emerald-505" size={18} /> Update Password
+          <Lock className="text-amber-505" size={18} /> Update Password
         </h3>
 
         <form onSubmit={handlePassSubmit(onPasswordChange)} className="space-y-4">
@@ -121,7 +121,7 @@ export default function DashboardProfile() {
                 {...passReg('newPassword', { required: 'New password is required', minLength: { value: 6, message: 'Password must be at least 6 characters' } })}
                 type="password"
                 placeholder="••••••••"
-                className="w-full bg-gray-800 border border-gray-700 rounded-lg px-10 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 transition-colors"
+                className="w-full bg-gray-800 border border-gray-700 rounded-lg px-10 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 transition-colors"
               />
             </div>
           </div>
@@ -137,7 +137,7 @@ export default function DashboardProfile() {
                 })}
                 type="password"
                 placeholder="••••••••"
-                className="w-full bg-gray-800 border border-gray-700 rounded-lg px-10 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 transition-colors"
+                className="w-full bg-gray-800 border border-gray-700 rounded-lg px-10 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 transition-colors"
               />
             </div>
           </div>
@@ -146,7 +146,7 @@ export default function DashboardProfile() {
             <button
               type="submit"
               disabled={updatingPassword}
-              className="bg-emerald-600 hover:bg-emerald-555 disabled:opacity-60 text-white font-semibold text-sm px-6 py-2.5 rounded-lg transition-colors flex items-center gap-2"
+              className="bg-amber-600 hover:bg-amber-555 disabled:opacity-60 text-white font-semibold text-sm px-6 py-2.5 rounded-lg transition-colors flex items-center gap-2"
             >
               {updatingPassword ? <Loader2 className="animate-spin" size={16} /> : 'Update Password'}
             </button>

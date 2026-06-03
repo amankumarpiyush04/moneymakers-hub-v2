@@ -26,7 +26,7 @@ export default function OrderSuccess() {
   if (loading) {
     return (
       <div className="flex justify-center items-center py-32 bg-gray-950 text-white min-h-screen">
-        <Loader2 className="animate-spin text-emerald-500 h-10 w-10" />
+        <Loader2 className="animate-spin text-amber-500 h-10 w-10" />
       </div>
     );
   }
@@ -35,7 +35,7 @@ export default function OrderSuccess() {
     <div className="bg-gray-950 text-white min-h-screen py-16 px-4 flex flex-col items-center justify-center">
       <div className="max-w-md w-full bg-gray-900 border border-gray-850 p-8 rounded-2xl text-center shadow-2xl space-y-6">
         {/* Animated Checkmark */}
-        <div className="mx-auto h-16 w-16 bg-emerald-500/10 border border-emerald-500/20 rounded-full flex items-center justify-center text-emerald-450 animate-scale-up">
+        <div className="mx-auto h-16 w-16 bg-amber-500/10 border border-amber-500/20 rounded-full flex items-center justify-center text-amber-450 animate-scale-up">
           <CheckCircle2 size={36} />
         </div>
 
@@ -68,7 +68,7 @@ export default function OrderSuccess() {
 
             <div className="flex justify-between font-bold text-sm text-white pt-1">
               <span>Paid Amount</span>
-              <span className="font-sora text-emerald-400">₹{order.totalAmount}</span>
+              <span className="font-sora text-amber-400">₹{order.totalAmount}</span>
             </div>
           </div>
         ) : (
@@ -80,7 +80,7 @@ export default function OrderSuccess() {
         <div className="pt-4 space-y-3">
           <Link
             to="/dashboard/library"
-            className="w-full bg-emerald-655 hover:bg-emerald-600 text-white font-bold py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2 shadow-lg shadow-emerald-950/50"
+            className="w-full bg-amber-655 hover:bg-amber-600 text-white font-bold py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2 shadow-lg shadow-amber-950/50"
           >
             Go to My Library <Download size={16} />
           </Link>

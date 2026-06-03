@@ -139,7 +139,7 @@ export default function CheckoutPage() {
     return (
       <div className="bg-gray-950 text-white min-h-screen py-20 flex flex-col items-center justify-center">
         <h2 className="text-xl font-bold font-sora mb-3">Checkout is empty</h2>
-        <button onClick={() => navigate('/browse')} className="text-emerald-450 hover:text-emerald-350 transition-colors">
+        <button onClick={() => navigate('/browse')} className="text-amber-450 hover:text-amber-350 transition-colors">
           Go back to Browse
         </button>
       </div>
@@ -163,7 +163,7 @@ export default function CheckoutPage() {
           {/* Billing Form Column */}
           <div className="md:col-span-7 bg-gray-900 border border-gray-850 p-6 sm:p-8 rounded-2xl">
             <h2 className="text-lg font-bold font-sora mb-6 flex items-center gap-2">
-              <CreditCard className="text-emerald-500" /> Billing Information
+              <CreditCard className="text-amber-500" /> Billing Information
             </h2>
 
             <form onSubmit={handlePayment} className="space-y-5">
@@ -177,7 +177,7 @@ export default function CheckoutPage() {
                   placeholder="John Doe"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 transition-colors"
+                  className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 transition-colors"
                 />
               </div>
 
@@ -191,7 +191,7 @@ export default function CheckoutPage() {
                   placeholder="john@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 transition-colors"
+                  className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 transition-colors"
                 />
                 <p className="text-xxs text-gray-500 mt-1.5">
                   Your ebook files and order receipts will be synced directly to this account.
@@ -201,7 +201,7 @@ export default function CheckoutPage() {
               <button
                 type="submit"
                 disabled={processing}
-                className="w-full bg-emerald-600 hover:bg-emerald-550 disabled:opacity-60 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-emerald-950/40 flex items-center justify-center gap-2"
+                className="w-full bg-amber-600 hover:bg-amber-550 disabled:opacity-60 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-amber-950/40 flex items-center justify-center gap-2"
               >
                 {processing ? (
                   <>
@@ -239,7 +239,7 @@ export default function CheckoutPage() {
               </div>
               <div className="flex justify-between">
                 <span>GST & Fees</span>
-                <span className="text-emerald-450 uppercase text-xs">Included</span>
+                <span className="text-amber-450 uppercase text-xs">Included</span>
               </div>
             </div>
 

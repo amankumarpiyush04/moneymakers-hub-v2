@@ -45,7 +45,7 @@ const DashboardLayout = ({ children }) => (
   <LayoutWrapper>
     <div className="bg-black text-white flex-grow">
       <nav className="bg-gray-900/60 border-b border-gray-850 px-6 py-4 flex gap-6 text-sm font-medium">
-        <Link to="/dashboard/library" className="text-emerald-450 hover:text-emerald-350 transition-colors">Library</Link>
+        <Link to="/dashboard/library" className="text-amber-450 hover:text-amber-350 transition-colors">Library</Link>
         <Link to="/dashboard/orders" className="text-gray-300 hover:text-white transition-colors">Orders</Link>
         <Link to="/dashboard/profile" className="text-gray-300 hover:text-white transition-colors">Profile</Link>
       </nav>
@@ -59,7 +59,7 @@ const AdminLayout = ({ children }) => (
   <LayoutWrapper>
     <div className="bg-black text-white flex-grow">
       <nav className="bg-gray-900/60 border-b border-gray-855 px-6 py-4 flex gap-6 text-sm font-medium">
-        <Link to="/admin" className="text-emerald-450 hover:text-emerald-350 transition-colors">Dashboard</Link>
+        <Link to="/admin" className="text-amber-450 hover:text-amber-350 transition-colors">Dashboard</Link>
         <Link to="/admin/products" className="text-gray-300 hover:text-white transition-colors">Products</Link>
         <Link to="/admin/orders" className="text-gray-300 hover:text-white transition-colors">Orders</Link>
         <Link to="/admin/users" className="text-gray-300 hover:text-white transition-colors">Users</Link>

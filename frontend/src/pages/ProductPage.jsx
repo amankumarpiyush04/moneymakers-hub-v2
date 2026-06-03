@@ -70,7 +70,7 @@ export default function ProductPage() {
   if (loading) {
     return (
       <div className="flex justify-center items-center py-32 bg-gray-950 text-white min-h-screen">
-        <Loader2 className="animate-spin text-emerald-500 h-10 w-10" />
+        <Loader2 className="animate-spin text-amber-500 h-10 w-10" />
       </div>
     );
   }
@@ -92,7 +92,7 @@ export default function ProductPage() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-16">
           {/* Ebook Cover Image Column */}
           <div className="md:col-span-5 flex justify-center">
-            <div className="w-full max-w-[340px] aspect-[4/5] bg-gradient-to-br from-emerald-950/40 to-gray-950 border border-gray-850 rounded-2xl shadow-2xl relative overflow-hidden flex flex-col justify-between p-8">
+            <div className="w-full max-w-[340px] aspect-[4/5] bg-gradient-to-br from-amber-950/40 to-gray-950 border border-gray-850 rounded-2xl shadow-2xl relative overflow-hidden flex flex-col justify-between p-8">
               {product.coverImage?.url ? (
                 <img
                   src={product.coverImage.url}
@@ -101,9 +101,9 @@ export default function ProductPage() {
                 />
               ) : (
                 <>
-                  <BookOpen size={48} className="text-emerald-500 mb-6" />
+                  <BookOpen size={48} className="text-amber-500 mb-6" />
                   <div className="mt-auto">
-                    <span className="text-xxs font-bold text-emerald-450 uppercase tracking-widest mb-2 block">{product.category}</span>
+                    <span className="text-xxs font-bold text-amber-450 uppercase tracking-widest mb-2 block">{product.category}</span>
                     <h2 className="text-2xl font-bold font-sora text-white leading-tight mb-2 line-clamp-3">{product.title}</h2>
                     <p className="text-xs text-gray-500">By {product.author}</p>
                   </div>
@@ -114,7 +114,7 @@ export default function ProductPage() {
 
           {/* Details Column */}
           <div className="md:col-span-7 flex flex-col justify-center">
-            <span className="text-xs font-bold text-emerald-450 uppercase tracking-widest mb-3 block">{product.category}</span>
+            <span className="text-xs font-bold text-amber-450 uppercase tracking-widest mb-3 block">{product.category}</span>
             <h1 className="text-3xl sm:text-4xl font-bold font-sora text-white leading-tight mb-4">{product.title}</h1>
             <p className="text-sm text-gray-405 mb-6">By <span className="text-gray-300 font-medium">{product.author}</span></p>
 
@@ -145,7 +145,7 @@ export default function ProductPage() {
                   {product.originalPrice && (
                     <>
                       <span className="text-sm text-gray-505 line-through">₹{product.originalPrice}</span>
-                      <span className="text-xs font-bold text-emerald-450 uppercase">
+                      <span className="text-xs font-bold text-amber-450 uppercase">
                         ({Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}% OFF)
                       </span>
                     </>
@@ -159,7 +159,7 @@ export default function ProductPage() {
                 className={`w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold transition-all shadow-lg flex items-center justify-center gap-2 ${
                   hasItem(product._id)
                     ? 'bg-gray-800 border border-gray-700 text-gray-400 cursor-not-allowed'
-                    : 'bg-emerald-600 hover:bg-emerald-550 text-white shadow-emerald-950/40'
+                    : 'bg-amber-600 hover:bg-amber-550 text-white shadow-amber-950/40'
                 }`}
               >
                 <ShoppingCart size={18} />
@@ -170,21 +170,21 @@ export default function ProductPage() {
             {/* Metadata specs */}
             <div className="grid grid-cols-3 gap-4 border-t border-gray-900 pt-6">
               <div className="flex items-center gap-2.5 text-xs text-gray-400">
-                <FileText size={16} className="text-emerald-450" />
+                <FileText size={16} className="text-amber-450" />
                 <div>
                   <span className="block text-gray-550">Format</span>
                   <span className="font-semibold text-gray-300 uppercase">{product.file?.format || 'PDF'}</span>
                 </div>
               </div>
               <div className="flex items-center gap-2.5 text-xs text-gray-400">
-                <BookOpen size={16} className="text-emerald-450" />
+                <BookOpen size={16} className="text-amber-450" />
                 <div>
                   <span className="block text-gray-550">Pages</span>
                   <span className="font-semibold text-gray-300">{product.pages || 'N/A'} pages</span>
                 </div>
               </div>
               <div className="flex items-center gap-2.5 text-xs text-gray-400">
-                <Globe size={16} className="text-emerald-450" />
+                <Globe size={16} className="text-amber-450" />
                 <div>
                   <span className="block text-gray-550">Language</span>
                   <span className="font-semibold text-gray-300">{product.language || 'English'}</span>
@@ -198,12 +198,12 @@ export default function ProductPage() {
         {product.learningPoints && product.learningPoints.length > 0 && (
           <div className="bg-gray-900/20 border border-gray-850 p-8 rounded-2xl mb-16">
             <h3 className="text-xl font-bold font-sora text-white mb-6 flex items-center gap-2">
-              <CheckCircle2 className="text-emerald-500" /> What You'll Learn
+              <CheckCircle2 className="text-amber-500" /> What You'll Learn
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {product.learningPoints.map((point, index) => (
                 <div key={index} className="flex gap-3 items-start text-sm text-gray-300 leading-relaxed">
-                  <span className="h-5 w-5 bg-emerald-500/10 border border-emerald-500/20 rounded-full flex items-center justify-center text-emerald-450 font-bold shrink-0 text-xs mt-0.5">
+                  <span className="h-5 w-5 bg-amber-500/10 border border-amber-500/20 rounded-full flex items-center justify-center text-amber-450 font-bold shrink-0 text-xs mt-0.5">
                     ✓
                   </span>
                   <span>{point}</span>
@@ -216,7 +216,7 @@ export default function ProductPage() {
         {/* Reviews Section */}
         <div className="border-t border-gray-900 pt-12">
           <h3 className="text-2xl font-bold font-sora text-white mb-8 flex items-center gap-2.5">
-            <MessageSquare className="text-emerald-500" /> Customer Reviews ({product.numReviews})
+            <MessageSquare className="text-amber-500" /> Customer Reviews ({product.numReviews})
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
@@ -283,14 +283,14 @@ export default function ProductPage() {
                         placeholder="Share your experience reading this ebook..."
                         value={comment}
                         onChange={(e) => setComment(e.target.value)}
-                        className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 transition-colors resize-none"
+                        className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 transition-colors resize-none"
                       />
                     </div>
 
                     <button
                       type="submit"
                       disabled={submittingReview}
-                      className="w-full bg-emerald-600 hover:bg-emerald-500 disabled:opacity-60 text-white font-bold py-2.5 rounded-lg transition-colors flex justify-center items-center gap-2"
+                      className="w-full bg-amber-600 hover:bg-amber-500 disabled:opacity-60 text-white font-bold py-2.5 rounded-lg transition-colors flex justify-center items-center gap-2"
                     >
                       {submittingReview ? (
                         <>

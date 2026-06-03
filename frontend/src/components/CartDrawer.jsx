@@ -120,7 +120,7 @@ export default function CartDrawer() {
                 </div>
                 <div className="flex justify-between">
                   <span>Handling Fee</span>
-                  <span className="font-bold text-emerald-450 uppercase text-[10px]">Free</span>
+                  <span className="font-bold text-amber-450 uppercase text-[10px]">Free</span>
                 </div>
                 <hr className="border-zinc-900 my-2" />
                 <div className="flex justify-between items-center text-white font-bold text-sm">
